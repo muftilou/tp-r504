@@ -1,4 +1,11 @@
-a=input("taper un nbe")
-print(a)
+import fonctions as f
 
-print ("Hello, World!")
+
+a = int(input("taper un nbe"))
+b = int(input("taper un nbe"))
+
+res = f.puissances(a,b)
+
+print (res)
+
+
