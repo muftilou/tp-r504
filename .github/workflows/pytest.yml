@@ -10,5 +10,5 @@ jobs:
       - name: installation pytest
         run: sudo apt install python3-pytest 
       - name: Run tests
-        run: pytest /test.py
+        run: pytest ./test.py
 
