@@ -1,0 +1,10 @@
+
+RUN apt-get update
+RUN apt-get upgrade
+RUN apt get install pkg-config
+RUN apt get install python-dev
+RUN apt get install python3-pip
+RUN apt get install default-libmysqlclient-dev
+
+RUN pip3 install mysql-connector-python
+RUN pip3 install flask-mysqldb 
