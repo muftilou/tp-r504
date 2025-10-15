@@ -1,9 +1,9 @@
-import java . io . * ;
-import java . net . 
+import java.io.*;
+import java.net.*;
 
-public class MonProg
+public class ServeurUDP
 {
-	public static void main( String[] args )
+	public static void main( String[] args ) throws Exception
 	{
 		DatagramSocket sock = new DatagramSocket (1234);
 		while (true)
@@ -11,7 +11,10 @@ public class MonProg
 			System.out.println( "-Wainting data" );
 			DatagramPacket packet = new DatagramPacket (new byte[1024], 1024);
 			sock.receive(packet);
-			String str = new 
+			String str = new String (packet.getData() );
+			System.out.println( "str=" + str );
+			sock.send(packet);
+
 		}
 	}
 }

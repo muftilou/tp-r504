@@ -1,16 +1,24 @@
-import java . io . * ;
-import java . net . 
+import java.io.*;
+import java.net.*;
 
 public class ClientUDP
 {
-	public static void main( String[] args )throws Exeption(
+	public static void main( String[] args ) throws Exception
 	{
-		byte [ ] data = s . getBytes ( ) ;
-		Inet Address addr = InetAddress.getLocalHost();
+		String s="Hello";
+		byte [] data = s.getBytes ( ) ;
+		InetAddress addr = InetAddress.getLocalHost();
 		System.out.println( "adresse=" +addr.getHostName() );
-		DatagramPacket packet  = new DatagramPacket( data, data.lenght, addr, 1234 );
+		DatagramPacket packet  = new DatagramPacket( data, data.length, addr, 1234 );
 		DatagramSocket sock = new DatagramSocket();
 		sock.send(packet);
+
+		System.out.println( "attente retour serveur");
+		sock.receive(packet);
+
+		String str = new String (packet.getData() );
+		System.out.println( "retoru serveur=" + str );
+
 		sock.close();
 	}
 }
